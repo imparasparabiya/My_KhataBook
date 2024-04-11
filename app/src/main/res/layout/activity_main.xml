@@ -99,6 +99,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/txtTotalB"
+                        android:id="@+id/TotalBalance"
                         android:layout_marginTop="5sp"
                         android:gravity="center"
                         android:text="100000"
@@ -152,6 +153,7 @@
                         android:layout_below="@id/txtIncomeB"
                         android:layout_marginTop="5sp"
                         android:gravity="center"
+                        android:id="@+id/TotalIncome"
                         android:text="200000"
                         android:textColor="@color/Green"
                         android:textSize="25sp"
@@ -202,6 +204,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/txtExpB"
                         android:layout_marginTop="5sp"
+                        android:id="@+id/TotalExpense"
                         android:gravity="center"
                         android:text="100000"
                         android:textColor="@color/red"
@@ -235,9 +238,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcDataMain"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                </androidx.recyclerview.widget.RecyclerView>
+                    android:layout_height="match_parent"/>
 
             </LinearLayout>
 
@@ -250,11 +251,12 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btnProfile"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
                     app:cardCornerRadius="6sp">
 
                     <ImageView
+                        android:layout_gravity="center"
                         android:layout_width="36sp"
                         android:layout_height="36sp"
                         android:src="@drawable/user" />
@@ -263,12 +265,13 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btnAddTransaction"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
                     android:layout_marginStart="55sp"
                     app:cardCornerRadius="6sp">
 
                     <ImageView
+                        android:layout_gravity="center"
                         android:layout_width="36sp"
                         android:layout_height="36sp"
                         android:src="@drawable/plus_circle" />
@@ -277,12 +280,13 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btnCategory"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
                     android:layout_marginStart="55sp"
                     app:cardCornerRadius="6sp">
 
                     <ImageView
+                        android:layout_gravity="center"
                         android:layout_width="36sp"
                         android:layout_height="36sp"
                         android:src="@drawable/squares_four" />
@@ -291,9 +295,7 @@
 
             </LinearLayout>
 
-
         </LinearLayout>
-
 
     </LinearLayout>
 

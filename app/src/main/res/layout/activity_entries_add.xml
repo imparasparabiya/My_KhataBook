@@ -80,6 +80,7 @@
                     android:id="@+id/edtTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:hint="Title" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,6 +96,7 @@
                     android:id="@+id/edtAmount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:hint="Amount"
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -111,6 +113,7 @@
                     android:id="@+id/edtNote"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:hint="Note" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -126,6 +129,7 @@
                     android:id="@+id/edtDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:hint="Date"
                     android:inputType="date" />
             </com.google.android.material.textfield.TextInputLayout>

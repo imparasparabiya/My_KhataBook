@@ -33,28 +33,27 @@ class Main_DataAdaptor(val context: Context, val list: ArrayList<EntriesAdd_Moda
     override fun getItemCount(): Int {
         return list.size
     }
-
     override fun onBindViewHolder(holder: MainDataHolder, position: Int) {
-        if (list.get(position).status == 1)
+        if (list[position].status == 0)
         {
-            holder.Amount_Style.setTextColor(Color.RED)
-        }else{
             holder.Amount_Style.setTextColor(Color.GREEN)
+        }else{
+            holder.Amount_Style.setTextColor(Color.RED)
         }
-        holder.Title_Style.text = list.get(position).title
-        holder.Amount_Style.text = list.get(position).amount.toString()
-        holder.Note_Style.text = list.get(position).note
-        holder.Date_Style.text = list.get(position).date
+        holder.Title_Style.text = list[position].title
+        holder.Amount_Style.text = list[position].amount.toString()
+        holder.Note_Style.text = list[position].note
+        holder.Date_Style.text = list[position].date
 
         holder.Amount_Style.setOnClickListener {
             var intent = Intent(context, Entries_add_Activity::class.java)
-            intent.putExtra("id",list.get(position).id)
-            intent.putExtra("title",list.get(position).title)
-            intent.putExtra("amount",list.get(position).amount)
-            intent.putExtra("date",list.get(position).date)
-            intent.putExtra("note",list.get(position).note)
-            intent.putExtra("status",list.get(position).status)
-            intent.putExtra("category",list.get(position).category)
+            intent.putExtra("id", list[position].id)
+            intent.putExtra("title", list[position].title)
+            intent.putExtra("amount", list[position].amount)
+            intent.putExtra("date", list[position].date)
+            intent.putExtra("note", list[position].note)
+            intent.putExtra("status", list[position].status)
+            intent.putExtra("category", list[position].category)
 
             context.startActivity(intent)
         }

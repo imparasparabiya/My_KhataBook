@@ -8,11 +8,11 @@ import android.database.sqlite.SQLiteOpenHelper
 import com.example.my_khatabook.ModalClass.CategoryModal
 import com.example.my_khatabook.ModalClass.EntriesAdd_Modal
 
-class DBhelper(context: Context) : SQLiteOpenHelper(context, "InEx", null, 1) {
+class DBhelper(context: Context) : SQLiteOpenHelper(context, "KhataBook", null, 1) {
     override fun onCreate(db: SQLiteDatabase?) {
 
         val query =
-            "CREATE TABLE InEx (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, amount TEXT, note TEXT, date TEXT) "
+            "CREATE TABLE InEx (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, amount TEXT, note TEXT, date TEXT,status INTEGER,category TEXT) " // status and category add kari
         val queryCategory =
             "CREATE TABLE Category (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)"
         //DBhelperma Query add
@@ -28,7 +28,7 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "InEx", null, 1) {
 
     fun addCategory(name: String) {
         var db = writableDatabase
-        val cn = ContentValues()
+        var cn = ContentValues()
         cn.put("name", name)
         db.insert("Category", null, cn)
     }
@@ -39,7 +39,8 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "InEx", null, 1) {
         var list = arrayListOf<CategoryModal>()
         val db = readableDatabase
         val query = "SELECT * FROM Category"
-        val cursor = db.rawQuery(query, null)
+        var cursor = db.rawQuery(query, null)
+
         if (cursor.moveToFirst()) {
             do {
                 var id = cursor.getString(cursor.getColumnIndex("id"))
@@ -48,7 +49,6 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "InEx", null, 1) {
                 list.add(modal)
             } while (cursor.moveToNext())
         }
-
         return list
     }
     @SuppressLint("Range")
@@ -56,7 +56,7 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "InEx", null, 1) {
         var db = readableDatabase
         var query = "SELECT * FROM InEx"
         var cursor = db.rawQuery(query,null)
-        var detail = ArrayList<EntriesAdd_Modal>()
+        var detail = ArrayList<EntriesAdd_Modal>()//*ArrayList Lidhutu
         if (cursor.moveToFirst())
         {
             do {
@@ -109,7 +109,7 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "InEx", null, 1) {
         db.update("InEx",cn,"id=?", arrayOf(modal.id))
     }
     fun deleteEntries(id: String){
-        var db =writableDatabase
+        val db =writableDatabase
         db.delete("InEx","id=?", arrayOf(id))
     }
 }

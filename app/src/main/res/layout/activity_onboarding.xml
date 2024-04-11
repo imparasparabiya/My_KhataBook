@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="20sp"
+    tools:context=".Onboarding_Activity">
+
+    <ImageView
+        android:layout_width="350sp"
+        android:layout_height="400sp"
+        android:src="@drawable/logo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:text="Spend Smarter Save More"
+        android:textColor="@color/light_Blue"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="250sp"
+        android:layout_height="48sp"
+        android:background="@drawable/button_style"
+        android:backgroundTint="@color/light_Blue"
+        android:layout_marginTop="20sp"
+        android:text="Get Started"
+        android:id="@+id/btnGetStarted"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:gravity="center"/>
+
+
+
+</LinearLayout>

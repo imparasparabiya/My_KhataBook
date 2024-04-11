@@ -33,8 +33,9 @@ class Category_Activity : AppCompatActivity() {
     }
 
     private fun intbindding() {
-        var lm = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+
         var adaptor = Category_Adaptor(this@Category_Activity, list)
+        var lm = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         categoryBinding.rvDatacategory.layoutManager = lm
         categoryBinding.rvDatacategory.adapter = adaptor
 

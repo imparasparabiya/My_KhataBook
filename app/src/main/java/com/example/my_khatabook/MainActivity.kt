@@ -32,17 +32,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        //get Data
         db = DBhelper(this)
         mainList = db.getEntries()
 
-        rvDataSet()
         intbindding()
+        totalViews()
 
+    }
 
+    private fun totalViews() {
+        val income = listOf<EntriesAdd_Modal>()
     }
 
 
     private fun intbindding() {
+
+        rvDataSet()
+
         binding.btnCategory.setOnClickListener {
             var intent = Intent(this, Category_Activity::class.java)
             startActivity(intent)

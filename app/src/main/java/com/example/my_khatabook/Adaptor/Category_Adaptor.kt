@@ -13,7 +13,7 @@ class Category_Adaptor(val context: Context, val categoryList: ArrayList<Categor
     RecyclerView.Adapter<Category_Adaptor.CategoryViewHolder>() {
 
     class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var catetgoryStyle: TextView = itemView.findViewById(R.id.categoryStyle)
+        var catetgoryStyle= itemView.findViewById<TextView>(R.id.categoryStyle)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {

@@ -1,6 +1,7 @@
 package com.example.my_khatabook
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
@@ -37,12 +38,11 @@ class Entries_add_Activity : AppCompatActivity() {
         var amount = intent.getStringExtra("amount")
         var note = intent.getStringExtra("note")
         var date = intent.getStringExtra("date")
-         id = intent.getStringExtra("id")
-        var status = intent.getIntExtra("inex",0)
+        id = intent.getStringExtra("id")
+        var status = intent.getIntExtra("status", 0)
         var category = intent.getStringExtra("category")
 
-        if (amount != null)
-        {
+        if (amount != null) {
             entriesAddBinding.btnDelete.visibility = View.VISIBLE
             entriesAddBinding.edtTitle.setText("$title")
             entriesAddBinding.edtAmount.setText("$amount")
@@ -50,11 +50,10 @@ class Entries_add_Activity : AppCompatActivity() {
             entriesAddBinding.edtDate.setText("$date")
 
             var i = 0
-            while (i<categoryList.size){
-                    if (categoryList[i].name.equals(category))
-                    {
-                        entriesAddBinding.spinerView.setSelection(i)
-                    }
+            while (i < categoryList.size) {
+                if (categoryList[i].name.equals(category)) {
+                    entriesAddBinding.spinerView.setSelection(i)
+                }
                 i++
             }
         }
@@ -63,6 +62,7 @@ class Entries_add_Activity : AppCompatActivity() {
     private fun initbindding() {
         entriesAddBinding.btnBack.setOnClickListener { finish() }
 
+        //Sppinner Category
         var nameList = arrayListOf<String>()
 
         categoryList.forEach {
@@ -70,7 +70,8 @@ class Entries_add_Activity : AppCompatActivity() {
         }
 
         var arrayAdapter = ArrayAdapter(
-            this,com.google.android.material.R.layout.support_simple_spinner_dropdown_item,nameList
+            this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
+            nameList
         )
         entriesAddBinding.spinerView.adapter = arrayAdapter
 
@@ -78,6 +79,7 @@ class Entries_add_Activity : AppCompatActivity() {
         entriesAddBinding.btnIncome.setOnClickListener {
             var index = entriesAddBinding.spinerView.selectedItemPosition
             var finalId = "0"
+
             if (id != null) {
                 finalId = id!!
             }
@@ -90,17 +92,21 @@ class Entries_add_Activity : AppCompatActivity() {
                 0,
                 nameList[index]
             )
-            if (id == null) {
+            if (id != null) {
                 //method Crreate Update Entries ni
                 db.updateEntries(modal)
             } else {
                 db.addEntries(modal)
             }
+
             finish()
         }
+        //Expense Button Click
         entriesAddBinding.btnExp.setOnClickListener {
+
             var index = entriesAddBinding.spinerView.selectedItemPosition
             var finalId = "0"
+
             if (id != null) {
                 finalId = id!!
             }
@@ -114,6 +120,7 @@ class Entries_add_Activity : AppCompatActivity() {
                 nameList[index]
             )
             if (id != null) {
+                //method Crreate Update Entries ni
                 db.updateEntries(modal)
             } else {
                 db.addEntries(modal)
