@@ -108,6 +108,18 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "KhataBook", null, 
 
         db.update("InEx",cn,"id=?", arrayOf(modal.id))
     }
+
+    fun totalIncomeB(modal: EntriesAdd_Modal){
+        val db=writableDatabase
+        val cn = ContentValues()
+
+        cn.put("amount",modal.amount)
+
+        db.insert("InEx",null,cn)
+    }
+    fun totalExpense(modal: EntriesAdd_Modal){
+
+    }
     fun deleteEntries(id: String){
         val db =writableDatabase
         db.delete("InEx","id=?", arrayOf(id))

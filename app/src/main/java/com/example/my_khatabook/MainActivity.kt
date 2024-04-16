@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun totalViews() {
         val income = listOf<EntriesAdd_Modal>()
+
     }
 
 

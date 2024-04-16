@@ -50,6 +50,7 @@ class Main_DataAdaptor(val context: Context, val list: ArrayList<EntriesAdd_Moda
             intent.putExtra("id", list[position].id)
             intent.putExtra("title", list[position].title)
             intent.putExtra("amount", list[position].amount)
+
             intent.putExtra("date", list[position].date)
             intent.putExtra("note", list[position].note)
             intent.putExtra("status", list[position].status)

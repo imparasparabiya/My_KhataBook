@@ -99,6 +99,7 @@ class Entries_add_Activity : AppCompatActivity() {
                 db.addEntries(modal)
             }
 
+
             finish()
         }
         //Expense Button Click
