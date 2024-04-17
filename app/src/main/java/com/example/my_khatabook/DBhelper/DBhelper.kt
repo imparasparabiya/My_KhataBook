@@ -56,7 +56,7 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "KhataBook", null, 
         var db = readableDatabase
         var query = "SELECT * FROM InEx"
         var cursor = db.rawQuery(query,null)
-        var detail = ArrayList<EntriesAdd_Modal>()//*ArrayList Lidhutu
+        var detail = ArrayList<EntriesAdd_Modal>()
         if (cursor.moveToFirst())
         {
             do {

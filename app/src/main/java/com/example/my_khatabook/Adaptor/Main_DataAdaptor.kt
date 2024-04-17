@@ -46,7 +46,9 @@ class Main_DataAdaptor(val context: Context, val list: ArrayList<EntriesAdd_Moda
         holder.Date_Style.text = list[position].date
 
         holder.Amount_Style.setOnClickListener {
+
             var intent = Intent(context, Entries_add_Activity::class.java)
+
             intent.putExtra("id", list[position].id)
             intent.putExtra("title", list[position].title)
             intent.putExtra("amount", list[position].amount)
