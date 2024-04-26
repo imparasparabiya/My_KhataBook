@@ -98,7 +98,7 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "KhataBook", null, 
     fun updateEntries(modal: EntriesAdd_Modal){
         val db = writableDatabase
         val cn = ContentValues()
-      //  cn.put("id",modal.id)
+       // cn.put("id",modal.id)
         cn.put("title",modal.title)
         cn.put("amount",modal.amount)
         cn.put("note",modal.note)

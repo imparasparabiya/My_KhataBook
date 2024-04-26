@@ -5,6 +5,7 @@
     <color name="orenge">#DD7913</color>
     <color name="yellow">#FFCD33</color>
     <color name="red">#E8FF0018</color>
-    <color name="light_Blue">#61D5DA</color>
+    <color name="Dark_Blue">#048BC2</color>
+    <color name="light_Blue">#9CC3D5</color>
     <color name="Green">#00670A</color>
 </resources>

@@ -38,14 +38,11 @@ class MainActivity : AppCompatActivity() {
 
         intbindding()
         totalViews()
-
     }
 
     private fun totalViews() {
         val income = listOf<EntriesAdd_Modal>()
-
     }
-
 
     private fun intbindding() {
 

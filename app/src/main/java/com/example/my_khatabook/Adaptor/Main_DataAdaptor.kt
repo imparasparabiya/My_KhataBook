@@ -33,11 +33,11 @@ class Main_DataAdaptor(val context: Context, val list: ArrayList<EntriesAdd_Moda
     override fun getItemCount(): Int {
         return list.size
     }
+
     override fun onBindViewHolder(holder: MainDataHolder, position: Int) {
-        if (list[position].status == 0)
-        {
+        if (list[position].status == 0) {
             holder.Amount_Style.setTextColor(Color.GREEN)
-        }else{
+        } else {
             holder.Amount_Style.setTextColor(Color.RED)
         }
         holder.Title_Style.text = list[position].title
@@ -52,7 +52,6 @@ class Main_DataAdaptor(val context: Context, val list: ArrayList<EntriesAdd_Moda
             intent.putExtra("id", list[position].id)
             intent.putExtra("title", list[position].title)
             intent.putExtra("amount", list[position].amount)
-
             intent.putExtra("date", list[position].date)
             intent.putExtra("note", list[position].note)
             intent.putExtra("status", list[position].status)

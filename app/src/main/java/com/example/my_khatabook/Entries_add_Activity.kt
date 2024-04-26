@@ -98,8 +98,6 @@ class Entries_add_Activity : AppCompatActivity() {
             } else {
                 db.addEntries(modal)
             }
-
-
             finish()
         }
         //Expense Button Click

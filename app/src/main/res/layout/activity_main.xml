@@ -69,9 +69,10 @@
                 android:layout_width="180sp"
                 android:layout_height="68sp"
                 android:layout_gravity="center"
+                app:cardElevation="10sp"
                 android:elevation="3sp"
                 android:outlineSpotShadowColor="@color/light_Blue"
-                app:cardBackgroundColor="@color/light_Blue"
+                app:cardBackgroundColor="@color/Dark_Blue"
                 app:cardCornerRadius="10sp">
 
                 <RelativeLayout
@@ -124,6 +125,7 @@
                 android:layout_height="68sp"
                 android:layout_gravity="center"
                 android:elevation="3sp"
+                app:cardElevation="10sp"
                 app:cardCornerRadius="10sp">
 
                 <RelativeLayout
@@ -253,6 +255,8 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btnProfile"
                     android:layout_width="50sp"
+                    app:cardElevation="10sp"
+                    app:cardBackgroundColor="@color/light_Blue"
                     android:layout_height="50sp"
                     app:cardCornerRadius="6sp">
 
@@ -268,6 +272,8 @@
                     android:id="@+id/btnAddTransaction"
                     android:layout_width="50sp"
                     android:layout_height="50sp"
+                    app:cardElevation="10sp"
+                    app:cardBackgroundColor="@color/light_Blue"
                     android:layout_marginStart="55sp"
                     app:cardCornerRadius="6sp">
 
@@ -283,6 +289,8 @@
                     android:id="@+id/btnCategory"
                     android:layout_width="50sp"
                     android:layout_height="50sp"
+                    app:cardElevation="10sp"
+                    app:cardBackgroundColor="@color/light_Blue"
                     android:layout_marginStart="55sp"
                     app:cardCornerRadius="6sp">
 
